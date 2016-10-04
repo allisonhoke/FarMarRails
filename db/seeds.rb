@@ -5,11 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+require 'csv'
 
 markets = []
 
-CSV.read(../seed_csvs/markets.csv).each do |line|
+mcsv_text = File.read(Rails.root.join("seed_csvs", "markets.csv"))
+mcsv.parse
+mcsv.each do |line|
   market = {
     id: line[0].to_i,
     name: line[1],
@@ -23,13 +25,13 @@ CSV.read(../seed_csvs/markets.csv).each do |line|
   markets << market
 end
 
-markets.each |market_hash|
+markets.each do |market_hash|
   Market.create(market_hash)
 end
 
 vendors = []
 
-CSV.read(../seed_csvs/vendors.csv).each do |line|
+File.read(Rails.root.join("seed_csvs", "vendors.csv")).each do |line|
   vendor = {
     id: line[0].to_i,
     name: line[1],
@@ -46,9 +48,34 @@ end
 
 products = []
 
-CSV.read(../seed_csvs/products.csv).each do |line|
+File.read(Rails.root.join("seed_csvs", "products.csv")).each do |line|
   product = {
     id: line[0].to_i,
     name: line[1],
     vendor_id: line[2].to_i
   }
+
+  products << product
+end
+
+products.each do |product_hash|
+  Product.create(product_hash)
+end
+
+sales = []
+
+File.read(Rails.root.join("seed_csvs", "sales.csv")).each do |line|
+  sale = {
+    id: line[0].to_i,
+    amount: line[1].to_i,
+    purchase_time: DateTime.parse(line[2]),
+    vendor_id: line[3].to_i,
+    product_id: line[4].to_i
+  }
+
+  sales << sale
+end
+
+sales.each do |sale_hash|
+  Sale.create(sale_hash)
+end
