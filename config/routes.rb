@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :market, only: [:index, :edit, :create, :show] do
-    resources :vendor, only: [:create, :edit, :delete, :index, :show]
+  resources :market, only: [:index, :edit, :new, :create, :show] do
+    resources :vendor, only: [:new, :create, :edit, :delete, :index, :show]
   end
 
   resources :vendor do
-    resources :products, only: [:create, :edit, :delete,:index, :show]
-    resources :sales, only: [:create, :show, :index]
+    resources :products, only: [:new, :create, :edit, :delete,:index, :show]
+    resources :sales, only: [:new, :create, :show, :index]
   end
 
   resources :market, only: [:index, :show]
   resources :vendors, only: [:index]
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
