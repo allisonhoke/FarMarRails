@@ -9,9 +9,7 @@ require 'csv'
 
 markets = []
 
-mcsv_text = File.read(Rails.root.join("seed_csvs", "markets.csv"))
-mcsv.parse
-mcsv.each do |line|
+CSV.read("#{Rails.root}/seed_csvs/markets.csv").each do |line|
   market = {
     id: line[0].to_i,
     name: line[1],
@@ -31,11 +29,11 @@ end
 
 vendors = []
 
-File.read(Rails.root.join("seed_csvs", "vendors.csv")).each do |line|
+CSV.read("#{Rails.root}/seed_csvs/vendors.csv").each do |line|
   vendor = {
     id: line[0].to_i,
     name: line[1],
-    num_employees: line[2].to_i,
+    number_employees: line[2].to_i,
     market_id: line[3].to_i
   }
 
@@ -48,7 +46,7 @@ end
 
 products = []
 
-File.read(Rails.root.join("seed_csvs", "products.csv")).each do |line|
+CSV.read("#{Rails.root}/seed_csvs/products.csv").each do |line|
   product = {
     id: line[0].to_i,
     name: line[1],
@@ -64,7 +62,7 @@ end
 
 sales = []
 
-File.read(Rails.root.join("seed_csvs", "sales.csv")).each do |line|
+CSV.read("#{Rails.root}/seed_csvs/sales.csv").each do |line|
   sale = {
     id: line[0].to_i,
     amount: line[1].to_i,
