@@ -1,0 +1,5 @@
+<p>Name: <%= @Vendor.name %></p>
+<p>Employee Count: <%= @Vendor.employees %></p>
+<p>Vendor_id: <%= @Vendor.vendor_id %>, <%= @Vendor.city %>, <%= @Vendor.state %>, <%= @Vendor.zip %></p>
+
+<%= button_to(Vendor, vendor_path(params[:id]), method: :get) %>

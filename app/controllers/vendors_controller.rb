@@ -1,6 +1,6 @@
-class Controller < ApplicationController
+class VendorsController < ApplicationController
   def index
-    @Vendors = .all
+    @Vendors = Vendors.all
   end
 
   def show

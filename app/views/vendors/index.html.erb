@@ -1,0 +1,8 @@
+<h1>All Vendors</h1>
+
+<p><%= button_to("Create a new Vendor", new_vendor_path, method: :get) %></p>
+
+<h3><% @Vendors.each do |Vendor| %>
+  <%= "Vendor: #{Vendor.name}" %>
+  <%= button_to("View details", Vendors_path(Vendor), method: :get) %>
+<% end %><h3/>
