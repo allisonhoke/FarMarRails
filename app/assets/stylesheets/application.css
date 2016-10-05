@@ -13,3 +13,105 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+   font-family: Mathlete-Skinny;
+   src: url(mathlete/Mathlete-Skinny.otf);
+ }
+
+
+
+.p{
+  text-align: left;
+  font-size: 2em;
+  color: aqua;
+  margin-bottom: 15px;
+  margin-left: 15px;
+
+}
+
+.img {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+/*<div class="img" style="background-image:url('http://i.imgur.com/tI5jq2c.jpg');"></div>
+<div class="img" style="background-image:url('http://i.imgur.com/37w80TG.jpg');"></div>
+<div class="img" style="background-image:url('http://i.imgur.com/B1MCOtx.jpg');"></div>
+*/
+
+a, a:visited{
+	color: violet;
+	font-family: Mathlete-Skinny;
+	font-size: 2em;
+}
+
+html, body { height: 100%; }
+
+body {
+  position: absolute;
+  font-weight: 200;
+  font-size: 1.5em;
+  color:mintcream;
+  font-style: normal;
+  font-family: Mathlete-Skinny;
+  text-align: justify;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: papayawhip;
+}
+
+li a{
+list-style-type: none;
+text-decoration: none;
+}
+
+ul, menu, dir {
+    display: block;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+.navigation {
+    z-index: 30;
+    display: block;
+    font-size: 2em;
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: cyan;
+    float: left;
+  }
+
+
+.title {
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    font-family: Mathlete-Skinny;
+    font-size: 3em;
+    text-decoration: none;
+}
+
+.nav {
+    display: block;
+     color: mediumorchid;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+}
+
+.nav:hover {
+    background-color: papayawhip;
+}
+
+.nav:active {
+    color: violet;
+}
