@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
     get 'welcome/index' => 'welcome#index'
-root 'welcome#index'
+    root 'welcome#index'
 
 
     resources :markets, only: [:index, :edit, :new, :create, :show] do
