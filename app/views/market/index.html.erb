@@ -1,0 +1,6 @@
+<h1>All Markets</h1>
+
+<% @markets.each do |market| %>
+  <%= "Market: #{market.name}" %>
+  <%= button_to("View details", market_path(market), method: :get) %>
+<% end %>
