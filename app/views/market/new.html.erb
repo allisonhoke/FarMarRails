@@ -1,0 +1,21 @@
+<%= form_for @market do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :city %>
+  <%= f.check_box :city %>
+
+  <%= f.label :county %>
+  <%= f.check_box :county %>
+
+  <%= f.label :state %>
+  <%= f.check_box :state %>
+
+  <%= f.label :zip %>
+  <%= f.check_box :zip %>
+
+  <%= f.submit "Submit" %>
+  <% end %>
