@@ -2,9 +2,4 @@
 <p>County: <%= @market.county %></p>
 <p>Address: <%= @market.address %>, <%= @market.city %>, <%= @market.state %>, <%= @market.zip %></p>
 
-<p>Vendors:</p>
-<ul>
-  <% @vendors.each do |vendor| %>
-  <li><%= vendor.name %></li>
-  <% end %>
-</ul>
+<%= button_to("See my vendors", market_vendors_path(params[:id]), method: :get) %>
