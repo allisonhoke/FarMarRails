@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'markets/index' => 'markets#index'
   root 'welcome#index'
 
-    resources :markets, only: [:index, :edit, :new, :update :create, :show] do
-    resources :vendors, only: [:index, :new, :create, :edit, :update :destroy, :show]
+    resources :markets, only: [:index, :edit, :new, :update, :create, :show] do
+    resources :vendors, only: [:index, :new, :create, :edit, :update, :destroy, :show]
   end
 
   resources :vendors do
