@@ -2,23 +2,21 @@ Rails.application.routes.draw do
 
 
 
+  get 'markets/index' => 'markets#index'
+  root 'welcome#index'
 
 
-    get 'welcome/index' => 'welcome#index'
-    root 'welcome#index'
-
-
-    resources :markets, only: [:index, :edit, :new, :create, :show] do
-    resources :vendors, only: [:new, :create, :edit, :delete, :index, :show]
+    resources :markets, only: [:index, :edit, :new, :update, :create, :show] do
+    resources :vendors, only: [:index, :new, :create, :edit, :update, :destroy, :show]
   end
 
   resources :vendors do
-    resources :products, only: [:new, :create, :edit, :delete,:index, :show]
+    resources :products, only: [:new, :create, :edit, :update, :destroy, :index, :show]
     resources :sales, only: [:new, :create, :show, :index]
   end
 
-  resources :markets, only: [:index, :show]
-  resources :vendors, only: [:index]
+  resources :markets, only: [:index, :show] do
+  resources :vendors, only: [:index, :show]
 end
 
 
@@ -75,4 +73,4 @@ end
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
+end
