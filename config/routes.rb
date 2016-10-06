@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 
 
-  get 'markets/index' => 'markets#index'
+  get 'markets/index' => 'markets#view'
+  get 'markets/:id/details' => 'markets#details', as: 'market_details'
   root 'welcome#index'
 
 
