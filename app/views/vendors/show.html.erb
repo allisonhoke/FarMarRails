@@ -1,6 +1,17 @@
 
+<h1>Vendor: <%= @vendor_id %></h1>
 
-<p>Vendor ID: <%= @Vendor.id %></p>
+<p>Vendor ID: <%= @vendor.id %></p>
+<p>Employee Count: <%= @vendor.number_employees %></p>
+<p>Market ID: <%= @vendor.market_id %></p>
+
+
+<h1> To view products, enter Product ID</h1>
+<h2><%= form_for 'search' do |f| %>
+  <%= f.text_field(:id) %>
+  <%= f.submit("Search") %></h2>
+<%end %>
 <p>Name: <%= @Vendor.name %></p>
-<p>Employee Count: <%= @Vendor.number_employees %></p>
-<p>Market ID: <%= @Vendor.market_id %></p>
+<p>Employee Count: <%= @Vendor.employees %></p>
+<p>Vendor_id: <%= @Vendor.vendor_id %>, <%= @Vendor.city %>, <%= @Vendor.state %>, <%= @Vendor.zip %></p>
+<%= button_to(Vendor, vendor_path(params[:id]), method: :get) %>
