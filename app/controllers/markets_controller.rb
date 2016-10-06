@@ -26,6 +26,14 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
   end
 
+  def view
+    @markets = Market.all
+  end
+
+  def details
+    @market = Market.find(params[:id])
+    @vendors = @market.vendors
+  end
   private
 
   def market_params
