@@ -1,8 +1,30 @@
-def index
-end
+class ProductsController < ApplicationController
 
-def new
-end
+  def index
+    @product = Product.all
+  end
 
-def edit
+  def show
+    @product = Product.find(params[:id])
+    @product.save
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to @product
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:id, :name, :vendor_id)
+  end
 end
