@@ -1,8 +1,8 @@
 <h1>All Markets</h1>
 
-<p><%= button_to("Create a new market", new_market_path, method: :get) %></p>
+<p><%= link_to("Create a new market", new_market_path, method: :get) %></p>
 
 <h1><% @markets.each do |market| %>
   <%= "Market: #{market.name}" %>
-  <%= button_to("View details", market_path(market), method: :get) %>
+  <%= link_to("View details", market_path(market), method: :get) %>
 <% end %></h1>
