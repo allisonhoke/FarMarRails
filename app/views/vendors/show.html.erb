@@ -5,9 +5,7 @@
 <p>Market ID: <%= @vendor.market_id %></p>
 <p>
 
-  <%= button_to("Product", vendor_products_path(params[:id]), method: :get) %></p>
-<h1> To view products, enter your VENDOR ID below</h1>
-<h2><%= form_for 'search' do |f| %>
-  <%= f.text_field(:q) %>
-  <%= f.submit("Search") %></h2>
-<%end %>
+
+<h2 class="link"><%= link_to("Edit", edit_vendor_path(:id), method: :get) %></h2>
+<h2 class="link"><%= link_to "Delete", vendor_path(:id), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></h2>
+<h2 class="link"><%= link_to("Your Products", vendor_products_path(@vendor), method: :get) %></h2>
