@@ -1,10 +1,11 @@
 class VendorsController < ApplicationController
+
   def index
-    @vendors = Vendors.all
+    @vendor = Vendor.all
   end
 
   def show
-    @Vendor = Vendor.find(params[:id])
+    @vendor = Vendor.find(params[:id])
     @vendor.save
   end
 
@@ -14,10 +15,13 @@ class VendorsController < ApplicationController
 
   def create
     @vendor = Vendor.new(vendor_params)
-
     if @vendor.save
+      redirect_to @vendor
+    else
+      render 'new'
     end
   end
+
   private
 
   def Vendor_params

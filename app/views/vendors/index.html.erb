@@ -2,7 +2,12 @@
 
 <p><%= button_to("Create a new Vendor", new_vendor_path, method: :get) %></p>
 
-<h3><% @Vendors.each do |Vendor| %>
-  <%= "Vendor: #{Vendor.name}" %>
-  <%= button_to("View details", Vendors_path(Vendor), method: :get) %>
+<h3><% @vendor.each do |t| %>
+  <%= "Vendor: #{t.name}" %>
+  <%= button_to("View details", vendor_path(t), method: :get) %>
+  <%= button_to("Edit", edit_vendor_path(t), method: :get) %>
+  <%= "Number of Employees: #{t.number_employees}" %>
+  <%= "Vendor ID: #{t.id}" %>
+  <%= "Market ID: #{t.market_id}" %>
+
 <% end %><h3/>

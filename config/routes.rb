@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :markets, only: [:index, :show] do
-  resources :vendors, only: [:index]
+  resources :vendors, only: [:index, :show]
 end
 
 

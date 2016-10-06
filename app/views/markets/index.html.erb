@@ -2,7 +2,7 @@
 
 <p><%= button_to("Create a new market", new_market_path, method: :get) %></p>
 
-<% @markets.each do |market| %>
+<h1><% @markets.each do |market| %>
   <%= "Market: #{market.name}" %>
   <%= button_to("View details", market_path(market), method: :get) %>
-<% end %>
+<% end %></h1>
