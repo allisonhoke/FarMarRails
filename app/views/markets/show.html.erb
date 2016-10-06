@@ -4,15 +4,15 @@
 
 <%= button_to("Edit this market", edit_market_path, method: :get) %>
 <%# button_to("See my vendors", market_vendors_path(params[:id]), method: :get) %>
-<p><%= button_to("Create a new vendor") %></p> <%# REVIEW: add path and method %>
+<p><%= button_to("Create a new vendor", new_market_vendor_path(params[:id]), method: :get) %></p>
 
 <p>Vendors:</p>
 <ul>
   <% @vendors.each do |vendor| %>
   <li>
   <%= vendor.name %>
-  <%= button_to("View vendor details") %> <%# REVIEW: add in the path and method %>
-  <%= button_to("Edit this vendor") %> <%# REVIEW: add in path an method %>
+  <%# button_to("View vendor details", market_vendor_path(@market, vendor), method: :get) %> <%# REVIEW: add in the path and method %>
+  <%= button_to("Edit this vendor", ) %> <%# REVIEW: add in path an method %>
   <%= button_to("Delete this vendor") %> <%# REVIEW: add in path an method %>
 </li>
   <% end %>
