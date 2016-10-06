@@ -18,8 +18,18 @@ class VendorsController < ApplicationController
     if @vendor.save
       redirect_to @vendor
     else
-      render 'new'
+      render :new
     end
+  end
+
+  def destroy
+    @vendor = Vendor.find(params[:id]).destroy
+    redirect_to vendors_path
+
+  end
+
+  def edit
+    @vendor = Vendor.find(params[:id])
   end
 
   private
