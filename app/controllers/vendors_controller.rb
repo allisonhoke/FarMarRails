@@ -14,9 +14,12 @@ class VendorsController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.new(vendor_params)
+    @vendor = Vendor.new
+    @vendor.name = params[:vendor][:name]
+    @vendor.number_employees = params[:vendor][:name]
+    @vendor.market_id = params[:market_id] #didn't finish - not assigning correctly
     if @vendor.save
-      redirect_to @vendor
+      redirect_to markets_path #didn't finish - want to direct somewhere else when not debugging
     else
       render :new
     end
