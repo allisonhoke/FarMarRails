@@ -88,7 +88,6 @@ ul, menu, dir {
     background-color: cyan;
     float: left;
   }
-
 .link {
   position: relative;
   display: block;
@@ -97,7 +96,7 @@ ul, menu, dir {
   text-decoration: none;
   padding: 5px;
   overflow: hidden;
-  color: grey;
+  color: black;
   background-color: honeydew;
 }
 
@@ -117,7 +116,7 @@ ul, menu, dir {
     margin: 20px 16px;
     position: relative;
     display: block;
-    color: mediumorchid;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -128,8 +127,10 @@ ul, menu, dir {
 }
 
 footer {
-  position: relative;
+  position: absolute;
+  display: block;
   background-color: deepskyblue;
   border-top: aqua thick;
+  margin: 20px;
   margin-top: 200px;
 }
