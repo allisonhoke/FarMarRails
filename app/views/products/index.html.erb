@@ -1,11 +1,14 @@
+<nav class = "nav">
+<ul class="navigation">
 <li class="nav"><a href="/">Home</a></li>
 <li class="nav"><a href="/vendors/:vendor_id/products/new">Create a New Product</a></li>
 <li class="nav"><a href= "/vendors/:vendor_id/sales">See all Sales></h2>
 <li class="nav"><a href="/"></a></li>
-
+</ul>
+</nav>
 
 <h1>Your Current Products</h1>
 <% @product.each do |t| %>
-  <h2><%= "Product: #{t.name}" %></h2>
-  <h2 class="link"><%= link_to("Individual Sales", vendor_sales_path(@product), method: :get) %></h2>
+  <h2="link"><%= "Product: #{t.name}" %></h2>
+  <li class="nav"><%= link_to("Individual Sales", vendor_sales_path(@product), method: :get) %></li>
  <% end %>
