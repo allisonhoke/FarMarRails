@@ -39,15 +39,11 @@
     background-size:     cover;
 }
 
-/*<div class="img" style="background-image:url('http://i.imgur.com/tI5jq2c.jpg');"></div>
-<div class="img" style="background-image:url('http://i.imgur.com/37w80TG.jpg');"></div>
-<div class="img" style="background-image:url('http://i.imgur.com/B1MCOtx.jpg');"></div>
-*/
 
 a, a:visited{
 	color: violet;
 	font-family: Mathlete-Skinny;
-	font-size: 2em;
+	font-size: 1em;
 }
 
 html, body { height: 100%; }
@@ -56,13 +52,12 @@ body {
   position: absolute;
   font-weight: 200;
   font-size: 1.5em;
-  color:mintcream;
   font-style: normal;
   font-family: Mathlete-Skinny;
   text-align: justify;
   text-decoration: none;
   list-style-type: none;
-  background-color: papayawhip;
+  background-color:
 }
 
 li a{
@@ -88,7 +83,15 @@ ul, menu, dir {
     background-color: cyan;
     float: left;
   }
-
+.link {
+  display: block;
+  font-size: 1em;
+  list-style-type: none;
+  text-decoration: none;
+  padding: 5px;
+  overflow: hidden;
+  background-color: grey;
+}
 
 .title {
     display: block;
@@ -96,7 +99,7 @@ ul, menu, dir {
     color: white;
     padding: 14px 16px;
     font-family: Mathlete-Skinny;
-    font-size: 3em;
+    font-size: 2em;
     text-decoration: none;
 }
 
@@ -110,8 +113,4 @@ ul, menu, dir {
 
 .nav:hover {
     background-color: papayawhip;
-}
-
-.nav:active {
-    color: violet;
 }
