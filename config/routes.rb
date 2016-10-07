@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
   get 'markets/index' => 'markets#index'
+  get 'vendors/index' => 'vendors#index'
   root 'welcome#index'
 
 
