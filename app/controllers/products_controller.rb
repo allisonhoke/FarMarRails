@@ -24,9 +24,8 @@ class ProductsController < ApplicationController
 
   def update
   @product = Product.find(params[:id])
-    if @product(product_params).update
+    @product.update(product_params)
     redirect_to @product
-    end
   end
 
   private
