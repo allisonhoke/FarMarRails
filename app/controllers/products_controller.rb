@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @product.save
   end
 
   def new
@@ -17,21 +16,33 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new
+    @product.name = params[:product][:name]
+    @product.vendor_id = params[:vendor_id]
     if @product.save
-      redirect_to @product
+      redirect_to vendor_products_path(params[:vendor_id])
     else
-      render 'new'
+      render :new
     end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+    @vendor = params[:vendor_id]
   end
 
   def update
   @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to @product
+      redirect_to vendor_products_path
     else
-      render 'edit'
+      render :edit
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id]).destroy
+    redirect_to vendor_products_path
   end
 
   private
