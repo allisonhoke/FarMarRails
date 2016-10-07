@@ -1,0 +1,29 @@
+ALL SALES
+<ul>
+<% @sales.each do |sale| %>
+  <li>Sale:
+  <%= "Amount: #{sale.amount}" %>
+  <%= "Purchase time: #{sale.purchase_time}" %>
+  <%= "Vendor id: #{sale.vendor_id}" %>
+  <%= "Product id: #{sale.product_id}" %></li>
+<% end %>
+</ul>
+
+
+TOTAL ALL SALES
+<p><%= "Total of all sales: #{ @total_sales }" %></p>
+
+
+CURRENT MONTH SALES
+<ul>
+<% @this_month_sales.each do |sale| %>
+  <li>Sale:
+  <%= "Amount: #{sale.amount}" %>
+  <%= "Purchase time: #{sale.purchase_time}" %>
+  <%= "Vendor id: #{sale.vendor_id}" %>
+  <%= "Product id: #{sale.product_id}" %></li>
+<% end %>
+</ul>
+
+CURRENT MONTH SALES TOTAL
+<p> <%= @this_month_sales_total %></p>
