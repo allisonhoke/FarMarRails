@@ -25,7 +25,6 @@ class VendorsController < ApplicationController
   def destroy
     @vendor = Vendor.find(params[:id]).destroy
     redirect_to vendors_path
-
   end
 
   def edit
@@ -33,13 +32,13 @@ class VendorsController < ApplicationController
   end
 
   def update
-  @vendor = Vendor.find(params[:id]).update
+    @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
-  redirect_to @vendor
-    else
-  render 'edit'
+      redirect_to @vendor
+
     end
   end
+
 
   private
 
