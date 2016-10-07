@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
 
   def index
     @product = Product.all
+
+    @vendor = Vendor.find(params[:vendor_id])
+    @individual_products = @vendor.products
   end
 
   def show
@@ -23,11 +26,11 @@ class ProductsController < ApplicationController
   end
 
   def update
-  @product = Product.find(params[:id]).update
-    if @product(vendor_params).update
-  redirect_to @product
+  @product = Product.find(params[:id])
+    if @product.update(vendor_params)
+      redirect_to @product
     else
-  render 'edit'
+      render 'edit'
     end
   end
 
