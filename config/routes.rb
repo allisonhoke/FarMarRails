@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
 
-
-<<<<<<< HEAD
   get 'markets/index' => 'markets#view'
   get 'markets/:id/details' => 'markets#details', as: 'market_details'
-=======
-  get 'markets/index' => 'markets#index'
-  get 'vendors/index' => 'vendors#index'
->>>>>>> b/nre
   root 'welcome#index'
 
 
