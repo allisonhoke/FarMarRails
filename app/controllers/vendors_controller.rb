@@ -33,8 +33,8 @@ class VendorsController < ApplicationController
   end
 
   def update
-  @vendor = Vendor.new(vendor_params).update
-    if @vendor.update
+  @vendor = Vendor.find(params[:id]).update
+    if @vendor.update(vendor_params)
   redirect_to @vendor
     else
   render 'edit'

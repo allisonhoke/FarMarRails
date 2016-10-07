@@ -36,12 +36,12 @@ class MarketsController < ApplicationController
   end
 
   def update
-  @market = Market.new(market_params).update
-    if @market.update
+    @market = Market.find(params[:id]).update
+      if @market.update(vendor_params)
   redirect_to @market
-    else
+      else
   render 'edit'
-    end
+      end
   end
 
   private
