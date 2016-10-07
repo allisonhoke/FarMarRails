@@ -2,8 +2,8 @@
 <p>County: <%= @market.county %></p>
 <p>Address: <%= @market.address %>, <%= @market.city %>, <%= @market.state %>, <%= @market.zip %></p>
 
-<%= link_to("Edit this market", edit_market_path, method: :get) %>
-<%# button_to("See my vendors", market_vendors_path(params[:id]), method: :get) %>
+
+<p><%= link_to("Edit this market", edit_market_path, method: :get) %></p>
 <p><%= link_to("Create a new vendor", new_market_vendor_path(params[:id]), method: :get) %></p>
 
 <p>Vendors:</p>
@@ -13,7 +13,6 @@
   <%= vendor.name %>
   <%= link_to("View vendor details", market_vendor_path(@market, vendor), method: :get) %> <%# REVIEW: add in the path and method %>
   <%= link_to("Edit this vendor", edit_market_vendor_path(@market, vendor), method: :get) %> <%# REVIEW: add in path an method %>
-  <%= link_to("Delete this vendor", market_vendor_path(@market, vendor), method: :delete) %> <%# REVIEW: add in path an method %>
-</li>
-  <% end %>
+  <%= link_to("Delete this vendor", market_vendor_path(@market, vendor), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></li>
+
 </ul>

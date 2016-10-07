@@ -22,6 +22,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update
+  @product = Product.new(product_params).update
+    if @product.update
+  redirect_to @product
+    else
+  render 'edit'
+    end
+  end
+
   private
 
   def product_params

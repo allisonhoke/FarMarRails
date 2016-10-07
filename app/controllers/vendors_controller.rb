@@ -32,9 +32,18 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
   end
 
+  def update
+  @vendor = Vendor.new(vendor_params).update
+    if @vendor.update
+  redirect_to @vendor
+    else
+  render 'edit'
+    end
+  end
+
   private
 
-  def Vendor_params
+  def vendor_params
     params.require(:vendor).permit(:id, :name, :number_employees, :market_id)
   end
 end
