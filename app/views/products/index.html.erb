@@ -1,0 +1,8 @@
+<h1>All product</h1>
+
+<p><%= link_to("Create a new product", new_product_path, method: :get) %></p>
+
+<h1><% @product.each do |p| %>
+  <%= "Product: #{p.name}" %>
+  <%= link_to("View details", product_path(p.id), method: :get) %>
+<% end %></h1>
