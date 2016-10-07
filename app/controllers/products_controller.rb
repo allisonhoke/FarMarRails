@@ -23,11 +23,9 @@ class ProductsController < ApplicationController
   end
 
   def update
-  @product = Product.new(product_params).update
-    if @product.update
-  redirect_to @product
-    else
-  render 'edit'
+  @product = Product.find(params[:id])
+    if @product(product_params).update
+    redirect_to @product
     end
   end
 
