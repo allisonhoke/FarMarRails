@@ -1,4 +1,7 @@
-<h2 class="title"><%= form_for @vendor, method: :patch do |f| %>
+<li class="nav"><a href="/">Home</a></li>
+<h1></h1>
+<h1 class="title">
+  <%= form_for @vendor, method: :patch do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -12,4 +15,4 @@
   <%= f.text_field :market_id %>
 
   <%= f.submit "Submit" %>
-  <% end %></h2>
+  <% end %></h1>

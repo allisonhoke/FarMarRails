@@ -1,4 +1,10 @@
-<%= form_for @product, url: vendor_product_path(@vendor, @product) do |f| %>
+
+
+<li class="nav"><a href="/">Home</a></li>
+<h1></h1>
+<h1 class="title">
+  <%= form_for @product, url: vendor_product_path(@vendor, @product) do |f| %>
+  
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -10,3 +16,4 @@
 
   <%= f.submit "Submit" %>
   <% end %>
+</h1>
